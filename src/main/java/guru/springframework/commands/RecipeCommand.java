@@ -52,4 +52,14 @@ public class RecipeCommand {
     private Difficulty difficulty;
     private NotesCommand notes;
     private List<CategoryCommand> categories = new ArrayList<>();
+
+    public void addCategory(CategoryCommand command) {
+        this.categories.add(command);
+    }
+
+    public void removeCategories(List<CategoryCommand> commands) {
+        for(CategoryCommand command: commands) {
+            this.categories.remove(command);
+        }
+    }
 }

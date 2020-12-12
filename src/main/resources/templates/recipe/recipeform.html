@@ -47,21 +47,17 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-3 form-group">
-                                    <label>Categories:</label>
-                                </div>
-                                <div class="col-md-9 form-group">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="checkbox" value=""/>
-                                            Cat 1
-                                        </label>
-                                    </div>
-                                    <div class="radio" th:remove="all">
-                                        <label>
-                                            <input type="checkbox" value=""/>
-                                            Cat 2
-                                        </label>
+                                <div class="col-md-12 form-group">
+                                    <h5>Categories:</h5>
+                                    <div class="col-md-9 form-group">
+                                        <div class="row-fluid">
+                                            <th:block th:each="category : ${categoryList}">
+                                                <input type="checkbox" name="cats"
+                                                       th:checked="${selectedCats.contains(category.getId())}"
+                                                       th:value="${category.getId()}"/>
+                                                <label th:text="${category.getDescription()}"></label> &nbsp;
+                                            </th:block>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
